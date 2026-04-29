@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Civils Avoidance</title>
+
+<style>
+:root{
+  --o2:#005EB8;
+  --red:#E4002B;
+  --bg:#07121f;
+  --card:#ffffff;
+  --text:#0b1220;
+  --muted:#64748b;
+  --stroke:#d6dde8;
+  --soft:#f8fafc;
+}
+
+body{
+  margin:0;
+  font-family:Inter, Arial, sans-serif;
+  background:linear-gradient(180deg,#07121f,#0b1626);
+  color:white;
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:20px;
+}
+
+.header{
+  background:linear-gradient(135deg,var(--o2),var(--red));
+  padding:20px;
+  border-radius:20px;
+}
+
+h1{
+  margin:0 0 10px;
+}
+
+.progress{
+  margin-top:15px;
+}
+
+.progress-bar{
+  height:12px;
+  background:#d1d5db;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+.progress-fill{
+  height:100%;
+  width:0%;
+  background:linear-gradient(90deg,var(--o2),var(--red));
+  transition:0.3s;
+}
+
+/* SECTION */
+
+.section{
+  background:var(--card);
+  color:var(--text);
+  border-radius:20px;
+  padding:18px;
+  margin-top:15px;
+}
+
+.section h2{
+  margin:0 0 14px;
+}
+
+.section-grid{
+  display:grid;
+  grid-template-columns: 2fr 1fr;
+  gap:18px;
+}
+
+/* LEFT */
+
+.checklist{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.checklist li{
+  margin-bottom:12px;
+}
+
+.note{
+  font-size:14px;
+  color:var(--muted);
+  margin-top:10px;
+}
+
+.notes-box{
+  margin-top:15px;
+  border:1px solid var(--stroke);
+  background:var(--soft);
+  border-radius:12px;
+  padding:12px;
+}
+
+.notes-box textarea{
+  width:100%;
+  min-height:100px;
+  border-radius:8px;
+  border:1px solid var(--stroke);
+  padding:8px;
+  font-family:inherit;
+}
+
+/* RIGHT */
+
+.doc-box{
+  border:1px solid var(--stroke);
+  background:var(--soft);
+  border-radius:12px;
+  padding:12px;
+}
+
+.doc-box h3{
+  margin-top:0;
+}
+
+.doc-links{
+  list-style:none;
+  padding:0;
+  margin:0;
+}
+
+.doc-links li{
+  margin-bottom:10px;
+}
+
+.doc-links a{
+  display:block;
+  text-decoration:none;
+  color:var(--o2);
+  font-weight:600;
+  border:1px solid var(--stroke);
+  background:white;
+  padding:8px;
+  border-radius:8px;
+}
+
+.doc-links a:hover{
+  border-color:var(--o2);
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+  .section-grid{
+    grid-template-columns:1fr;
+  }
+}
+  .export-btn{
+  border:none;
+  background:white;
+  color:#005EB8;
+  font-weight:700;
+  padding:10px 14px;
+  border-radius:8px;
+  cursor:pointer;
+}
+
+.export-btn:hover{
+  opacity:0.9;
+}
+  @media print {
+  body{
+    background:white;
+    color:black;
+  }
+
+  .export-btn{
+    display:none;
+  }
+
+  .section{
+    page-break-inside: avoid;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+  <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+    <div>
+      <h1>Civils Avoidance Guide</h1>
+      <p>A step-by-step guide for preparing technicians for civils avoidance activities</p>
+    </div>
+
+    <button onclick="exportPDF()" class="export-btn">Export to PDF</button>
+  </div>
+
+<div class="progress">
+<div id="progressText">Progress: 0%</div>
+<div class="progress-bar">
+<div id="progressFill" class="progress-fill"></div>
+</div>
+</div>
+</div>
+
+<!-- SECTION 1 -->
+<div class="section">
+<h2>Dewalt Desiliter</h2>
+
+<div class="section-grid">
+
+<div>
+<ul class="checklist">
+<li><input type="checkbox"> Desiliter Setup - Video</li>
+<li><input type="checkbox"> Technician happy to proceed</li>
+
+</ul>
+
+<div class="note">Assess confidence at height, attitude, and safety awareness.</div>
+
+<div class="notes-box">
+<textarea placeholder="Manager notes..."></textarea>
+</div>
+</div>
+
+<div class="doc-box">
+<h3>Documentation</h3>
+<ul class="doc-links">
+  <li><a href="https://virginmediauk.sharepoint.com/:w:/r/sites/CONCentralandWalesRegionFieldManagers/_layouts/15/Doc.aspx?sourcedoc=%7B2049F9B5-9229-487B-98FD-B03EA5947442%7D&file=OR%20Portal%20-%20Duct%20and%20Pole%20Map%20tool%20request%20form%20and%20training%20approval.docx&action=default&mobileredirect=true"> OR Portal Request Form</a></li>
+<li><a href="#">OR Portal access guide</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 2 -->
+<div class="section">
+<h2>2. Training & Setup</h2>
+
+<div class="section-grid">
+
+<div>
+<ul class="checklist">
+  <li><input type="checkbox"> Training arranged/completed</li>
+<li><input type="checkbox"> Qualifications confirmed</li>
+<li><input type="checkbox"> Qualifications QR passport set up</li>
+</ul>
+
+<div class="notes-box">
+<textarea placeholder="Manager notes..."></textarea>
+</div>
+</div>
+
+<div class="doc-box">
+<h3>Documentation</h3>
+<ul class="doc-links">
+<li><a href="https://virginmediauk.sharepoint.com/:x:/r/sites/CONCentralandWalesRegionFieldManagers/_layouts/15/Doc.aspx?sourcedoc=%7B04AB9354-1060-4A99-8F0C-B56335622976%7D&file=Training%20Courses%202026.xlsx&action=default&mobileredirect=true">Qualification list</a></li>
+<li><a href="https://virginmediauk.sharepoint.com/:p:/r/sites/CONCentralandWalesRegionFieldManagers/_layouts/15/Doc.aspx?sourcedoc=%7B328F8D7F-E5A8-4EEC-941A-741094D2A74F%7D&file=Certificate%20location%20Manager%20and%20Tech%20Guides.pptx&action=edit&mobileredirect=true">QR code setup</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 3 -->
+<div class="section">
+<h2>3. Tooling & Safety</h2>
+
+<div class="section-grid">
+
+<div>
+<ul class="checklist">
+<li><input type="checkbox"> Tooling ordered</li>
+<li><input type="checkbox"> Skywalk helmet available -  S26-1045</li>
+<li><input type="checkbox"> Harness checked</li>
+<li><input type="checkbox"> Ladder checked and logged</li>
+<li><input type="checkbox"> 6-month inspection reminder set</li>
+</ul>
+
+<div class="notes-box">
+<textarea placeholder="Manager notes..."></textarea>
+</div>
+</div>
+
+<div class="doc-box">
+<h3>Documentation</h3>
+<ul class="doc-links">
+<li><a href="https://virginmediauk.sharepoint.com/:x:/r/sites/CONCentralandWalesRegionFieldManagers/_layouts/15/Doc.aspx?sourcedoc=%7BA3EFB441-2B33-43FA-BC70-AF96DEFE144F%7D&file=Copy%20of%20Overhead-Toolkit-Lists-2025.xlsx&action=default&mobileredirect=true">CFO tooling list</a></li>
+<li><a href="https://virginmediauk.sharepoint.com/:w:/r/sites/CONCentralandWalesRegionFieldManagers/_layouts/15/Doc.aspx?sourcedoc=%7B28137403-41BC-4A1F-A8F7-1827B5303D2E%7D&file=WAH%20Inspection%20Document%20(Harness%20Checks).docx&action=default&mobileredirect=true">Harness inspection sheet</a></li>
+<li><a href="https://admin.lumiformapp.com/inspections/new/183845">Ladder lumiform</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 4 -->
+<div class="section">
+<h2>4. First Day</h2>
+
+<div class="section-grid">
+
+<div>
+<ul class="checklist">
+<li><input type="checkbox"> Tooling issued</li>
+<li><input type="checkbox"> OH/LV PowerPoint brief completed</li>
+<li><input type="checkbox"> OH sign-off sheet started</li>
+</ul>
+
+<div class="notes-box">
+<textarea placeholder="Manager notes..."></textarea>
+</div>
+</div>
+
+<div class="doc-box">
+<h3>Documentation</h3>
+<ul class="doc-links">
+<li><a href="https://virginmediauk.sharepoint.com/sites/CONCentralandWalesRegionFieldManagers/Overhead/Forms/AllItems.aspx?viewid=666445f2%2D3175%2D43cf%2D831f%2Dd22930437207&npsAction=createList&id=%2Fsites%2FCONCentralandWalesRegionFieldManagers%2FOverhead%2F4194070176Working%2Don%2DOH%2DPower%2DBriefing%2Dfor%2DSA008%2Epdf&parent=%2Fsites%2FCONCentralandWalesRegionFieldManagers%2FOverhead">OH LV Brief</a></li>
+  <li><a href="#">OH Brief PowerPoint</a></li>
+<li><a href="https://virginmediauk.sharepoint.com/:w:/r/sites/CONCentralandWalesRegionFieldManagers/_layouts/15/Doc.aspx?sourcedoc=%7B952B84AF-A4D4-4BCD-AF3D-2974CC6392FE%7D&file=Overhead%20Sign%20Off.docx&action=default&mobileredirect=true">OH sign-off sheet</a></li>
+  <li><a href="https://virginmediauk.sharepoint.com/sites/CONCentralandWalesRegionFieldManagers/Overhead/Forms/AllItems.aspx?viewid=666445f2%2D3175%2D43cf%2D831f%2Dd22930437207&npsAction=createList&id=%2Fsites%2FCONCentralandWalesRegionFieldManagers%2FOverhead%2F895194202Working%2DOver%2DPower%2D%2D%2DSign%2DOff%2Epdf&parent=%2Fsites%2FCONCentralandWalesRegionFieldManagers%2FOverhead">OH LV sign-off sheet</a></li>
+  <li><a href="https://virginmediauk.sharepoint.com/sites/CONCentralandWalesRegionFieldManagers/Overhead/Forms/AllItems.aspx?viewid=666445f2%2D3175%2D43cf%2D831f%2Dd22930437207&npsAction=createList&id=%2Fsites%2FCONCentralandWalesRegionFieldManagers%2FOverhead%2F31109118Overhead%2Dpower%2Dglovebox%2Dguide%2Dto%2Dthe%2DOpenreach%2Dportal%2D01%2DJune%2D2023%2D%2D2%2D%2Epdf&parent=%2Fsites%2FCONCentralandWalesRegionFieldManagers%2FOverhead">OH power glovebox guide</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 5 -->
+<div class="section">
+<h2>5. Mentoring</h2>
+
+<div class="section-grid">
+
+<div>
+<ul class="checklist">
+<li><input type="checkbox"> Mentor assigned</li>
+<li><input type="checkbox"> Practice climbs completed</li>
+</ul>
+
+<div class="notes-box">
+<textarea placeholder="Manager notes..."></textarea>
+</div>
+</div>
+
+<div class="doc-box">
+<h3>Documentation</h3>
+<ul class="doc-links">
+<li><a href="https://forms.office.com/pages/responsepage.aspx?id=NKgyNvN-DkOnoY-FVAiCJHWoVQaaQoVLnRY4_ebpgStUOVpNVTROR1VVRVFSMVZIQU1FOEgzSEpMNCQlQCN0PWcu&route=shorturl">Pre-Climb form</a></li>
+  <li><a href="https://forms.office.com/pages/responsepage.aspx?id=NKgyNvN-DkOnoY-FVAiCJAxxmW4zEDRHswZAM3-rNKlUNTJMQzVMWDBCTUMzTzBCOEdHOUIyMVFSSSQlQCN0PWcu&route=shorturl">Mewp daily check</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 6 -->
+<div class="section">
+<h2>6. Before Solo</h2>
+
+<div class="section-grid">
+
+<div>
+<ul class="checklist">
+<li><input type="checkbox"> Overhead sign-off completed</li>
+<li><input type="checkbox"> Month 1 planned at 50%</li>
+<li><input type="checkbox"> Month 2 planned at 75%</li>
+</ul>
+
+<div class="notes-box">
+<textarea placeholder="Manager notes..."></textarea>
+</div>
+</div>
+
+<div class="doc-box">
+<h3>Documentation</h3>
+<ul class="doc-links">
+<li><a href="https://virginmediauk.sharepoint.com/:w:/r/sites/CONCentralandWalesRegionFieldManagers/_layouts/15/Doc.aspx?sourcedoc=%7B952B84AF-A4D4-4BCD-AF3D-2974CC6392FE%7D&file=Overhead%20Sign%20Off.docx&action=default&mobileredirect=true">OH sign off sheet</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+<!-- SECTION 7 -->
+<div class="section">
+<h2>7. Ongoing</h2>
+
+<div class="section-grid">
+
+<div>
+<ul class="checklist">
+<li><input type="checkbox"> 6-month harness checks</li>
+<li><input type="checkbox"> 6-month OH re-sign-off</li>
+<li><input type="checkbox"> Hybrid jobs understood</li>
+<li><input type="checkbox"> DP changes understood</li>
+  <li><input type="checkbox">Openreach dropwire removal process understood</li>
+<li><input type="checkbox"> Wayleave process understood</li>
+  
+</ul>
+
+<div class="notes-box">
+<textarea placeholder="Manager notes..."></textarea>
+</div>
+</div>
+
+<div class="doc-box">
+<h3>Documentation</h3>
+<ul class="doc-links">
+<li><a href="https://virginmediauk.sharepoint.com/sites/Functions/SitePages/DP-changes.aspx">DP change process</a></li>
+<li><a href="#">Wayleave process guide</a></li>
+  <li><a href="https://virginmediauk.sharepoint.com/sites/CONCentralandWalesRegionFieldManagers/Overhead/Forms/AllItems.aspx?viewid=666445f2%2D3175%2D43cf%2D831f%2Dd22930437207&npsAction=createList&id=%2Fsites%2FCONCentralandWalesRegionFieldManagers%2FOverhead%2FOR%20Dropwire%20Removal%20Process%2Epdf&parent=%2Fsites%2FCONCentralandWalesRegionFieldManagers%2FOverhead">OR dropwire removal</a></li>
+</ul>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<script>
+const checkboxes = document.querySelectorAll("input[type='checkbox']");
+const progressFill = document.getElementById("progressFill");
+const progressText = document.getElementById("progressText");
+
+function updateProgress(){
+  let total = checkboxes.length;
+  let checked = document.querySelectorAll("input[type='checkbox']:checked").length;
+  let percent = Math.round((checked/total)*100);
+  progressFill.style.width = percent + "%";
+  progressText.innerText = "Progress: " + percent + "%";
+}
+
+checkboxes.forEach(cb => cb.addEventListener("change", updateProgress));
+  function exportPDF(){
+  window.print();
+}
+</script>
+
+</body>
+</html>
